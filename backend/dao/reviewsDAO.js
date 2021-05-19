@@ -1,8 +1,8 @@
 // Reviews Data Access Object
 import mongodb from "mongodb";
-
 const ObjectId = mongodb.ObjectID;
 
+let restaurants;
 let reviews;
 
 export default class ReviewsDAO {
