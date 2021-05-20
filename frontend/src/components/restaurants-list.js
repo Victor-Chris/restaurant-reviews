@@ -1,7 +1,9 @@
 import React from "react";
 
-function RestaurantsList() {
-  return <div></div>;
+const RestaurantsList = props => {
+  return <div>
+      <h1>Restaurant List</h1>
+  </div>;
 }
 
 export default RestaurantsList;
