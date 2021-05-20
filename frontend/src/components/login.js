@@ -1,7 +1,9 @@
 import React from "react";
 
 function Login() {
-  return <div></div>;
+  return <div>
+      <h1>React</h1>
+  </div>;
 }
 
 export default Login;
