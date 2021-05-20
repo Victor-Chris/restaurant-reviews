@@ -47,7 +47,7 @@ function App() {
 
       <div className="container mt-3">
         <Switch>
-          <Route exact path={["/", "/restautants"]} component={RestaurantsList} />
+          <Route exact path={["/", "/restaurants"]} component={RestaurantsList} />
           <Route exact path="/redirect" render={() => {
             //handleRedirect();
             return <RestaurantsList />
