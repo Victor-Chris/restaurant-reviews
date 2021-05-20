@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 /** Import Components */
 import AddReview from "./components/add-review";
 import Login from "./components/login";
-import Restaurant from "./components/restaurant";
+import Restaurant from "./components/restaurants";
 import RestaurantsList from "./components/restaurants-list";
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
           </li>
           <li className="nav-item">
             { user ? (
-              <a href="#" onClick={logout} className="nav-link" style={{cursor:'pointer'}}>
+              <a onClick={logout} className="nav-link" style={{cursor:'pointer'}}>
                 Logout {user.name}
               </a>
             ) : (
@@ -48,19 +48,24 @@ function App() {
       <div className="container mt-3">
         <Switch>
           <Route exact path={["/", "/restaurants"]} component={RestaurantsList} />
-          <Route exact path="/redirect" render={() => {
-            //handleRedirect();
-            return <RestaurantsList />
-          }} />
-          <Route path="/restaurants/:/id/review" render={(props) => {
-            <AddReview {...props} user={user} />
-          }} />
-          <Route path="/restaurants/:id" render={(props) => {
-            <Restaurant {...props} user={user} />
-          }}/>
-          <Route path="/login" render={(props) => {
-            <Login {...props} login={login} />
-          }} />
+          <Route 
+            path="/restaurants/:id/review" 
+            render={(props) => (
+              <AddReview {...props} user={user} />
+            )}
+          />
+          <Route 
+            path="/restaurants/:id" 
+            render={(props) => (
+              <Restaurant {...props} user={user} />
+            )}
+          />
+          <Route 
+            path="/login" 
+            render={(props) => (
+              <Login {...props} login={login} />
+            )} 
+          />
         </Switch>
       </div>
 
